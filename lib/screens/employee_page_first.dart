@@ -1,3 +1,4 @@
+import 'package:attendance_app/screens/camera_screen.dart';
 import 'package:attendance_app/widgets/big_buttons.dart';
 import 'package:flutter/material.dart';
 import "package:font_awesome_flutter/font_awesome_flutter.dart";
@@ -37,7 +38,9 @@ class MyFirstHomePage extends StatelessWidget {
               CustomElevatedButton(
                   mainText: 'Reporting to Work',
                   subText: 'Regular Duty',
-                  onPressed: () {}),
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=> const CameraPage()));
+                  }),
               CustomElevatedButton(
                   mainText: 'Out of office Duty',
                   subText: 'Regular Duty',
