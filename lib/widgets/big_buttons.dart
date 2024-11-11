@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CustomElevatedButton extends StatelessWidget {
-  //final IconData icon; // Icon at the top left corner
-  final String mainText; // Main text to display
-  final String subText; // Sub text to display
-  final VoidCallback onPressed; // Function to call when the button is pressed
-  final Color? buttonColor; // Optional button color
+  //final IconData icon;
+  final String mainText;
+  final String subText; 
+  final VoidCallback onPressed; 
+  final Color? buttonColor; 
 
   const CustomElevatedButton({
     super.key,

@@ -1,4 +1,5 @@
-import 'package:attendance_app/screens/employee_page.dart';
+//import 'package:attendance_app/screens/employee_page.dart';
+import 'package:attendance_app/screens/scanner_page.dart';
 import 'package:attendance_app/screens/visitor_section.dart';
 import 'package:flutter/material.dart';
 
@@ -49,7 +50,7 @@ class _MyFirstPageState extends State<MyFirstPage> {
                         onPressed: () {
                           
                               Navigator.push(context, MaterialPageRoute(builder: (context){
-                          return const MyHomePage();
+                          return const QRScannerPage();
                          }));
                         },
                         style: ElevatedButton.styleFrom(
