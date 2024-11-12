@@ -1,6 +1,7 @@
+import 'package:attendance_app/screens/firstpage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:path_provider/path_provider.dart';
+//import 'package:path_provider/path_provider.dart';
 import 'dart:io';
 
 class CameraPage extends StatefulWidget {
@@ -22,7 +23,8 @@ class _CameraPageState extends State<CameraPage> {
 
   // Method to open the camera
   Future<void> _openCamera() async {
-    final pickedFile = await _picker.pickImage(source: ImageSource.camera);
+    final pickedFile = await _picker.pickImage(source: ImageSource.camera,preferredCameraDevice: CameraDevice.front);
+    
 
     if (pickedFile != null) {
       setState(() {
@@ -31,20 +33,17 @@ class _CameraPageState extends State<CameraPage> {
     }
   }
 
-  // Method to save the image locally in the app's documents directory
+  // Method to save image
   Future<void> _saveImageLocally() async {
     if (_image == null) return;
 
-    final directory = await getApplicationDocumentsDirectory();
-    final imagePath = '${directory.path}/saved_image.jpg';
-    final imageFile = await _image!.copy(imagePath);
+   // final directory = await getApplicationDocumentsDirectory();
+   // final imagePath = '${directory.path}/saved_image.jpg';
+   // final imageFile = await _image!.copy(imagePath);
 
     if (mounted) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("Image saved locally at $imagePath")),
-      );
-
-      Navigator.pop(context, imageFile);
+      // Navigator.push(context, MaterialPageRoute(builder: (context)=> const CameraPage()));
+      Navigator.push(context, MaterialPageRoute(builder: (context)=> const MyFirstPage()));
     }
   }
 

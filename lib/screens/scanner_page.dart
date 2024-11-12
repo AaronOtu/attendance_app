@@ -1,11 +1,8 @@
-// ignore_for_file: deprecated_member_use
-
 import 'dart:io' show Platform;
-
 import 'package:attendance_app/screens/employee_page_first.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:qr_code_scanner_plus/qr_code_scanner_plus.dart'; 
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:qr_code_scanner_plus/qr_code_scanner_plus.dart';
 
 class QRScannerPage extends StatefulWidget {
   const QRScannerPage({super.key});
@@ -32,46 +29,70 @@ class _QRScannerPageState extends State<QRScannerPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      body: Stack(
         children: <Widget>[
-          Expanded(
-            flex: 5,
-            child: QRView(
-              key: qrKey,
-              onQRViewCreated: _onQRViewCreated,
-              cameraFacing: CameraFacing.front,
+          // QR Code Scanner (camera view)
+          QRView(
+            key: qrKey,
+            onQRViewCreated: _onQRViewCreated,
+            cameraFacing: CameraFacing.front,
+          ),
+          Positioned(
+            left: 0,
+            right: 0,
+            top:0,
+            child: AppBar(
+              backgroundColor: Colors.transparent,
+             leading: GestureDetector(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 8.0),
+            child: Row(
+              children: [
+                Icon(
+                  FontAwesomeIcons.angleLeft,
+                  color: Colors.red,
+                ),
+              ],
             ),
           ),
-          Expanded(
-            flex: 1,
-            child: Center(
-              child: (result != null)
-                  ? Text(
-                      'Barcode Type: ${describeEnum(result!.format)}   Data: ${result!.code}')
-                  : const Text('Scan a code'),
+        ),
+          ),
+          ),
+
+          Center(
+            child: Container(
+              width: 250,
+              height: 250,
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.red, width: 4),
+                borderRadius: BorderRadius.circular(12),
+              ),
             ),
-          )
+          ),
         ],
       ),
     );
   }
 
-void _onQRViewCreated(QRViewController controller) {
-  this.controller = controller;
-  controller.scannedDataStream.listen((scanData) {
-    setState(() {
-      result = scanData;
-    });
+  void _onQRViewCreated(QRViewController controller) {
+    this.controller = controller;
+    controller.scannedDataStream.listen((scanData) {
+      setState(() {
+        result = scanData;
+      });
 
-    // Navigate directly to EmployeePage after any QR code scan
-    if (mounted) {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => const MyFirstHomePage()),
-      );
-    }
-  });
-}
+      // Navigate directly to EmployeePage after any QR code scan
+      if (mounted) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const MyFirstHomePage()),
+        );
+      }
+    });
+  }
 
   @override
   void dispose() {

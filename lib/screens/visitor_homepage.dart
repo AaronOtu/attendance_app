@@ -19,6 +19,9 @@ class _VisitorPageState extends State<VisitorPage> {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       appBar: AppBar(
         leading: GestureDetector(
@@ -27,83 +30,101 @@ class _VisitorPageState extends State<VisitorPage> {
           },
           child: const Padding(
             padding: EdgeInsets.symmetric(horizontal: 8.0),
-            child: Row(
-              children: [
-                Icon(
-                  FontAwesomeIcons.angleLeft,
-                  color: Colors.red,
-                ),
-              ],
+            child: Icon(
+              FontAwesomeIcons.angleLeft,
+              color: Colors.red,
             ),
           ),
         ),
-        title: const Text('Visitor Actions',
-            style: TextStyle(color: Colors.red, fontSize: 15)),
+        title: const Text(
+          'Visitor Actions',
+          style: TextStyle(color: Colors.red, fontSize: 15),
+        ),
         centerTitle: true,
       ),
-      body: ListView(padding: const EdgeInsets.all(30), children: [
-        TextField(
+      body: ListView(
+        padding: EdgeInsets.symmetric(
+          horizontal: screenWidth * 0.08, // 8% of screen width padding
+          vertical: screenHeight * 0.05,  // 5% of screen height padding
+        ),
+        children: [
+          TextField(
             decoration: const InputDecoration(hintText: 'Fullname'),
-            controller: fullnameController),
-        const SizedBox(height: 40),
-        TextField(
+            controller: fullnameController,
+          ),
+          SizedBox(height: screenHeight * 0.04), // 4% of screen height
+          TextField(
             decoration: const InputDecoration(hintText: 'Organisation'),
-            controller: organisationController),
-        const SizedBox(height: 40),
-        TextField(
+            controller: organisationController,
+          ),
+          SizedBox(height: screenHeight * 0.04),
+          TextField(
             decoration: const InputDecoration(hintText: 'Phone number'),
-            controller: phoneNumberController),
-        const SizedBox(height: 40),
-        TextField(
+            controller: phoneNumberController,
+          ),
+          SizedBox(height: screenHeight * 0.04),
+          TextField(
             decoration: const InputDecoration(hintText: 'Host'),
-            controller: hostController),
-        const SizedBox(height: 40),
-        TextField(
-          decoration: const InputDecoration(hintText: 'Car Number (GR-789-20)'),
-          controller: carNumberController,
-        ),
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Row(children: [
-            const Text('Purpose of Visit:',
-                style: TextStyle(fontWeight: FontWeight.bold)),
-            Switch(
-              value: light,
-              activeColor: Colors.red,
-              onChanged: (value) {
-                setState(
-                  () {
-                    light = value;
-                  },
-                );
-              },
+            controller: hostController,
+          ),
+          SizedBox(height: screenHeight * 0.04),
+          TextField(
+            decoration: const InputDecoration(hintText: 'Car Number (GR-789-20)'),
+            controller: carNumberController,
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: screenHeight * 0.03),
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  const Text(
+                    'Purpose of Visit:',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  Switch(
+                    value: light,
+                    activeColor: Colors.red,
+                    onChanged: (value) {
+                      setState(() {
+                        light = value;
+                        if (dark && light) dark = false; 
+                      });
+                    },
+                  ),
+                  const Text('Official'),
+                  Switch(
+                    value: dark,
+                    activeColor: Colors.red,
+                    onChanged: (value) {
+                      setState(() {
+                        dark = value;
+                        if (light && dark) light = false; 
+                      });
+                    },
+                  ),
+                  const Text('Personal'),
+                ],
+              ),
             ),
-            const Text('Official'),
-            Switch(
-              value: dark,
-              activeColor: Colors.red,
-              onChanged: (value) {
-                setState(
-                  () {
-                    dark = value;
-                  },
-                );
-              },
-            ),
-            const Text('Personal')
-          ]),
-        ),
-        const SizedBox(height: 50),
-        const Spacer(),
-        ElevatedButton(
+          ),
+          SizedBox(height: screenHeight * 0.05),
+          ElevatedButton(
             onPressed: () {},
             style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.red,
-                foregroundColor: Colors.white,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10))),
-            child: const Text('SUBMIT'))
-      ]),
+              backgroundColor: Colors.red,
+              foregroundColor: Colors.white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              padding: EdgeInsets.symmetric(
+                vertical: screenHeight * 0.02, // Button height as 2% of screen height
+              ),
+            ),
+            child: const Text('SUBMIT'),
+          ),
+        ],
+      ),
     );
   }
 }
