@@ -131,7 +131,7 @@ class VisitorSection extends StatefulWidget {
 class _VisitorSectionState extends State<VisitorSection> {
   @override
   Widget build(BuildContext context) {
-    // Get the screen's width and height
+  
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
     final isLandscape =
@@ -179,8 +179,8 @@ class _VisitorSectionState extends State<VisitorSection> {
                           borderRadius: BorderRadius.circular(10),
                         ),
                         padding: EdgeInsets.symmetric(
-                          horizontal: screenWidth * 0.1, // 10% of screen width
-                          vertical: screenHeight * 0.02, // 2% of screen height
+                          horizontal: screenWidth * 0.1, 
+                          vertical: screenHeight * 0.02, 
                         ),
                       ),
                       child: const Text('TAP TO SIGN IN'),
@@ -204,7 +204,7 @@ class _VisitorSectionState extends State<VisitorSection> {
                             ),
                             padding: EdgeInsets.symmetric(
                               vertical:
-                                  screenHeight * 0.015, // 1.5% of screen height
+                                  screenHeight * 0.015, 
                             ),
                           ),
                           child: const Text('TAP TO SIGN OUT'),
@@ -224,7 +224,7 @@ class _VisitorSectionState extends State<VisitorSection> {
                             ),
                             padding: EdgeInsets.symmetric(
                               vertical:
-                                  screenHeight * 0.015, // 1.5% of screen height
+                                  screenHeight * 0.015, 
                             ),
                           ),
                           child: const Text('BEEN HERE BEFORE?'),
@@ -236,10 +236,10 @@ class _VisitorSectionState extends State<VisitorSection> {
               )
             : Column(
                 children: [
-                  SizedBox(height: screenHeight * 0.05), // 5% of screen height
+                  SizedBox(height: screenHeight * 0.05), 
                   Padding(
                     padding: EdgeInsets.only(
-                        top: screenHeight * 0.4), // 40% of screen height
+                        top: screenHeight * 0.4), 
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.push(context,
@@ -254,8 +254,8 @@ class _VisitorSectionState extends State<VisitorSection> {
                           borderRadius: BorderRadius.circular(10),
                         ),
                         padding: EdgeInsets.symmetric(
-                          horizontal: screenWidth * 0.1, // 10% of screen width
-                          vertical: screenHeight * 0.02, // 2% of screen height
+                          horizontal: screenWidth * 0.1, 
+                          vertical: screenHeight * 0.02, 
                         ),
                       ),
                       child: const Text('TAP TO SIGN IN'),
@@ -264,8 +264,8 @@ class _VisitorSectionState extends State<VisitorSection> {
                   const Spacer(),
                   Padding(
                     padding: EdgeInsets.symmetric(
-                      horizontal: screenWidth * 0.05, // 5% of screen width
-                      vertical: screenHeight * 0.02, // 2% of screen height
+                      horizontal: screenWidth * 0.05, 
+                      vertical: screenHeight * 0.02, 
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -282,16 +282,14 @@ class _VisitorSectionState extends State<VisitorSection> {
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               padding: EdgeInsets.symmetric(
-                                vertical: screenHeight *
-                                    0.015, // 1.5% of screen height
+                                vertical: screenHeight * 0.015,
                               ),
                             ),
                             child: const Text('TAP TO SIGN OUT'),
                           ),
                         ),
                         SizedBox(
-                            width: screenWidth *
-                                0.05), // Add spacing between buttons
+                            width: screenWidth * 0.05), 
                         Expanded(
                           child: ElevatedButton(
                             onPressed: () {},
@@ -303,8 +301,7 @@ class _VisitorSectionState extends State<VisitorSection> {
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               padding: EdgeInsets.symmetric(
-                                vertical: screenHeight *
-                                    0.015, // 1.5% of screen height
+                                vertical: screenHeight * 0.015, 
                               ),
                             ),
                             child: const Text('BEEN HERE BEFORE?'),
@@ -313,7 +310,7 @@ class _VisitorSectionState extends State<VisitorSection> {
                       ],
                     ),
                   ),
-                  SizedBox(height: screenHeight * 0.03), // 3% of screen height
+                  SizedBox(height: screenHeight * 0.03), 
                 ],
               ),
       ),

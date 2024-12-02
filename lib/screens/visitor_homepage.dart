@@ -44,15 +44,15 @@ class _VisitorPageState extends State<VisitorPage> {
       ),
       body: ListView(
         padding: EdgeInsets.symmetric(
-          horizontal: screenWidth * 0.08, // 8% of screen width padding
-          vertical: screenHeight * 0.05,  // 5% of screen height padding
+          horizontal: screenWidth * 0.08, 
+          vertical: screenHeight * 0.05,  
         ),
         children: [
           TextField(
             decoration: const InputDecoration(hintText: 'Fullname'),
             controller: fullnameController,
           ),
-          SizedBox(height: screenHeight * 0.04), // 4% of screen height
+          SizedBox(height: screenHeight * 0.04), 
           TextField(
             decoration: const InputDecoration(hintText: 'Organisation'),
             controller: organisationController,
@@ -118,7 +118,7 @@ class _VisitorPageState extends State<VisitorPage> {
                 borderRadius: BorderRadius.circular(10),
               ),
               padding: EdgeInsets.symmetric(
-                vertical: screenHeight * 0.02, // Button height as 2% of screen height
+                vertical: screenHeight * 0.02, 
               ),
             ),
             child: const Text('SUBMIT'),

@@ -1,4 +1,6 @@
 import 'package:attendance_app/screens/firstpage.dart';
+import 'package:attendance_app/screens/login_page.dart';
+import 'package:attendance_app/screens/signup_page.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -13,7 +15,7 @@ class MyApp extends StatelessWidget {
         title: 'My flutter App',
         themeMode: ThemeMode.system,
         debugShowCheckedModeBanner: false,
-        home: MyFirstPage()
+        home: SignUpPage()
         
     );
   }
