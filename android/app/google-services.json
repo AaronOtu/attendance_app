@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "868296026200",
+    "project_id": "etranzact-clockin-system",
+    "storage_bucket": "etranzact-clockin-system.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:868296026200:android:fea156ed99db995cb0422d",
+        "android_client_info": {
+          "package_name": "com.example.attendance_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_C2OGfMzmAxdcguccjqZBB26F3qjrYs8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
