@@ -1,4 +1,5 @@
 import 'package:attendance_app/screens/firstpage.dart';
+import 'package:attendance_app/screens/signup_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import "package:flutter/material.dart";
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
@@ -176,6 +177,34 @@ class _LoginPageState extends State<LoginPage> {
                   style: const TextStyle(color: Colors.red),
                 ),
             ],
+            const SizedBox(height: 20,),
+             const SizedBox(height:20),
+         Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                      "Already have an account?",
+                      style: TextStyle(color: Color.fromARGB(179, 17, 16, 16)),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SignUpPage() 
+                          ),
+                        );
+                      },
+                      child: const Text(
+                        "SignUp",
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 14, 13, 13),
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
+                )
           ],
         ),
       ),
