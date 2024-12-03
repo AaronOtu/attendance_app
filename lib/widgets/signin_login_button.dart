@@ -10,8 +10,8 @@ Container signInSignUpButton(
     decoration: BoxDecoration(borderRadius: BorderRadius.circular(90)),
     child: ElevatedButton(
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.blueAccent, // Button background color
-        foregroundColor: Colors.white, // Text color
+        backgroundColor: Colors.blueAccent, 
+        foregroundColor: Colors.white, 
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30),
         ),

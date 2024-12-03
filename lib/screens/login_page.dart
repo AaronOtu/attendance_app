@@ -36,7 +36,7 @@ class _LoginPageState extends State<LoginPage> {
       await Auth().phoneAuthentication(
         phoneNumber: _phoneController.text.trim(),
         verificationCompleted: (PhoneAuthCredential credential) async {
-          // Auto-verification succeeded, sign in the user
+          
           await Auth().signInWithCredential(credential);
           // Navigate to the first page
           _navigateToFirstPage();

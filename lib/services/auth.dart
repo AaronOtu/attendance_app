@@ -37,11 +37,11 @@ class Auth {
       verificationCompleted: verificationCompleted,
       verificationFailed: verificationFailed,
       codeSent: (String verificationId, int? resendToken) {
-        this.verificationId = verificationId;  // Store the verificationId
+        this.verificationId = verificationId;  
         codeSent(verificationId, resendToken);
       },
       codeAutoRetrievalTimeout: (String verificationId) {
-        this.verificationId = verificationId;  // Store the verificationId
+        this.verificationId = verificationId;  
         codeAutoRetrievalTimeout(verificationId);
       },
     );
@@ -55,3 +55,20 @@ class Auth {
     await _firebaseAuth.signInWithCredential(credential);
   }
 }
+/*Future<void> phoneAuthentication(String phoneNumber) async{
+await _firebaseAuth.verifyPhoneNumber(
+phoneNumber:phoneNumber,
+verificationCompleted: (credential) async{
+await _firebaseAuth.signInWithCredential(credential);
+},
+codeSent:(verificationId, resendToken){
+this.verificationId.value = verificationId;},
+codeAutoRetrievalTimeout:(verificationId){
+this.verificationId.value = verificationId};
+verificationFailed: (e){
+if (e.code == 'Invalid-phone-number'){
+  Get.snackbar('Error', 'The provided phone number is not valid.');}
+  else{
+  Get.snackbar('Error', 'Something went wrong. Try again.');}};
+)}
+*/

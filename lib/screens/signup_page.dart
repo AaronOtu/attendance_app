@@ -1,3 +1,4 @@
+import 'package:attendance_app/screens/email_login.dart';
 import 'package:attendance_app/screens/login_page.dart';
 import 'package:attendance_app/services/auth.dart';
 import 'package:attendance_app/widgets/textfield.dart';
@@ -20,19 +21,19 @@ class _SignUpPageState extends State<SignUpPage> {
   final _formKey = GlobalKey<FormState>();
 
   final FirebaseAuth _auth = FirebaseAuth.instance;
-  String? verificationId; // Store verificationId
+  String? verificationId; 
 
-  /// Handles the SignUp logic
+
   void _signUp() async {
     if (_formKey.currentState?.validate() ?? false) {
       try {
-        // Register user using Firebase Auth
+        
         await Auth().createUserWithEmailAndPassword(
           email: _emailTextController.text.trim(),
           password: _passwordTextController.text.trim(),
         );
 
-        // Send OTP to phone number
+        
         await _auth.verifyPhoneNumber(
           phoneNumber: _phoneTextController.text.trim(),
           verificationCompleted: (PhoneAuthCredential credential) async {
@@ -176,7 +177,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const LoginPage(verificationId: ''),
+                            builder: (context) => const EmailLoginPage()    //const LoginPage(verificationId: ''),
                           ),
                         );
                       },

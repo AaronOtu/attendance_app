@@ -19,12 +19,12 @@ class _MyFirstPageState extends State<MyFirstPage> {
           leading: const Text("VISEM"),
           backgroundColor: Colors.white,
         ),
-        body: Center(
-          child: Column(
+        body: 
+           Column(
             children: [
               const Padding(
                 padding: EdgeInsets.only(top: 300),
-                child: Image(image: AssetImage('images/ng-etranz-logo.webp'),width: 200,)
+                child: Center(child: Image(image: AssetImage('images/ng-etranz-logo.webp'),width: 200,)),
               ),
               const Spacer(),
               Padding(
@@ -65,6 +65,6 @@ class _MyFirstPageState extends State<MyFirstPage> {
               const SizedBox(height: 30)
             ],
           ),
-        ));
+        );
   }
 }
