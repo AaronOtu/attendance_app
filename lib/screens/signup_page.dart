@@ -5,6 +5,7 @@ import 'package:attendance_app/widgets/textfield.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+//This page is no more in use
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
 
@@ -55,10 +56,10 @@ class _SignUpPageState extends State<SignUpPage> {
               ),
             );
 
-            // Store verificationId locally
+          
             this.verificationId = verificationId;
 
-            // Pass the verificationId to LoginPage
+            
             Navigator.pushReplacement(
               context,
               MaterialPageRoute(

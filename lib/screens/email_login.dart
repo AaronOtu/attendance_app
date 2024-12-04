@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import "package:attendance_app/screens/firstpage.dart";
 import "package:attendance_app/screens/signup_page.dart";
 import "package:attendance_app/widgets/textfield.dart";
@@ -21,12 +23,12 @@ class _EmailLoginPageState extends State<EmailLoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: SingleChildScrollView(
-                child: Form(
-                  key: _formKey,
-                  child: Column(children: [
+      child: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: SingleChildScrollView(
+            child: Form(
+          key: _formKey,
+          child: Column(children: [
             const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -68,26 +70,17 @@ class _EmailLoginPageState extends State<EmailLoginPage> {
               onPressed: () async {
                 if (_formKey.currentState!.validate()) {
                   try {
-                    await FirebaseAuth.instance
-                        .signInWithEmailAndPassword(
-                      email: _emailTextController.text,
-                      password: _passwordTextController.text,
-                    )
-                        .then((value) {
-                      Navigator.push(
-                        // ignore: use_build_context_synchronously
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return const MyFirstPage();
-                          },
-                        ),
-                      );
-                      _emailTextController.clear();
-                      _passwordTextController.clear();
-                      
-                      
-                    });
+                    await FirebaseAuth.instance.signInWithEmailAndPassword(
+                      email: _emailTextController.text.trim(),
+                      password: _passwordTextController.text.trim(),
+                    );
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const MyFirstPage()),
+                    );
+                    _emailTextController.clear();
+                    _passwordTextController.clear();
                   } on FirebaseAuthException catch (e) {
                     setState(() {
                       if (e.code == 'user-not-found') {
@@ -110,36 +103,35 @@ class _EmailLoginPageState extends State<EmailLoginPage> {
                 ),
               ),
             ),
-            const SizedBox(height:20),
-             Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Text(
-                          "Already have an account?",
-                          style: TextStyle(color: Color.fromARGB(179, 17, 16, 16)),
-                        ),
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const SignUpPage() 
-                              ),
-                            );
-                          },
-                          child: const Text(
-                            "SignUp",
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 14, 13, 13),
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ],
-                    )
-                  ]),
-                )),
-          ),
-        ));
+            const SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text(
+                  "Already have an account?",
+                  style: TextStyle(color: Color.fromARGB(179, 17, 16, 16)),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SignUpPage()),
+                    );
+                  },
+                  child: const Text(
+                    "SignUp",
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 14, 13, 13),
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ],
+            )
+          ]),
+        )),
+      ),
+    ));
   }
 }
