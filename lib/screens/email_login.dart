@@ -83,6 +83,10 @@ class _EmailLoginPageState extends State<EmailLoginPage> {
                           },
                         ),
                       );
+                      _emailTextController.clear();
+                      _passwordTextController.clear();
+                      
+                      
                     });
                   } on FirebaseAuthException catch (e) {
                     setState(() {
