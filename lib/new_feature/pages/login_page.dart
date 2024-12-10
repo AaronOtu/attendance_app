@@ -1,3 +1,4 @@
+import 'package:attendance_app/new_feature/pages/first_page.dart';
 import 'package:attendance_app/new_feature/widgets/submit_button.dart';
 import 'package:attendance_app/new_feature/widgets/textformfield.dart';
 import 'package:flutter/material.dart';
@@ -36,7 +37,13 @@ class _MyLogingPageState extends ConsumerState<MyLogingPage> {
                   const SizedBox(height: 15),
                   etzTextField('Password',Icons.email_outlined,false,_passwordTextController),
                   const SizedBox(height: 50),
-                  etzSubmitButton('Login',(){})
+                  etzSubmitButton('Login',(){
+                        Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const EtzFirstPage()),
+                    );
+                  })
             ])),
           ),
         ),
