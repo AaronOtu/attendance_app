@@ -1,3 +1,4 @@
+import 'package:attendance_app/new_feature/constants/colors.dart';
 import 'package:attendance_app/new_feature/pages/employee_page.dart';
 import 'package:attendance_app/new_feature/pages/visitor_page.dart';
 import 'package:attendance_app/new_feature/widgets/etzbutton.dart';
@@ -15,6 +16,10 @@ class _EtzFirstPageState extends ConsumerState<EtzFirstPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFFf1f3f8),
+      appBar: AppBar(
+        backgroundColor: blue,
+      ),
       body: Center(
           child: Row(
 

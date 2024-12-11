@@ -47,48 +47,46 @@ class _MyLogingPageState extends ConsumerState<MyLogingPage> {
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Center(
-          
+          child: SingleChildScrollView(
             child: Form(
                 key: _formKey,
-                child: Center(
-                  child: Column(
-                      //mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        //           const Row(
-                        //   mainAxisAlignment: MainAxisAlignment.center,
-                        //   children: [
-                        //     Center(
-                        //       child: Image(
-                        //         image: AssetImage('images/ng-etranz-logo.webp'),
-                        //         width: 200,
-                        //       ),
-                        //     ),
-                        //   ],
-                        // ),
-                        const Center(child: Text('Welcome Back! 👋🏾')),
-                        etzTextField('aaronotu99@gmail.com', Icons.email_outlined,
-                            false, _emailTextController),
-                        const SizedBox(height: 20),
-                        
-                        etzTextField('Password', Icons.person_2, false,
-                            _passwordTextController),
-                        const SizedBox(height: 20),
-                      
-                           etzSubmitButton('Login', () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) {
-                                return const EtzFirstPage();
-                              }),
-                            );
-                          }),
-                        
-                      ]),
-                )),
+                child: Column(
+                    //mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      //           const Row(
+                      //   mainAxisAlignment: MainAxisAlignment.center,
+                      //   children: [
+                      //     Center(
+                      //       child: Image(
+                      //         image: AssetImage('images/ng-etranz-logo.webp'),
+                      //         width: 200,
+                      //       ),
+                      //     ),
+                      //   ],
+                      // ),
+                      const Text('Welcome Back! 👋🏾'),
+                      etzTextField('aaronotu99@gmail.com', Icons.email_outlined,
+                          false, _emailTextController),
+                      const SizedBox(height: 20),
+                      const SizedBox(height: 15),
+                      etzTextField('Password', Icons.person_2, false,
+                          _passwordTextController),
+                      const SizedBox(height: 50),
+                      Expanded(
+                        child: etzSubmitButton('Login', () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) {
+                              return const EtzFirstPage();
+                            }),
+                          );
+                        }),
+                      )
+                    ])),
           ),
         ),
-      );
-  
+      ),
+    );
   }
 }

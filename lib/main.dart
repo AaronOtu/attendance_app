@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       title: 'My Flutter App',
       themeMode: ThemeMode.system,
-      //theme: ThemeData.light(),
+      //theme: ThemeData.dark(),
       debugShowCheckedModeBanner: false,
       home: MyLogingPage(),
     );

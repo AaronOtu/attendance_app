@@ -30,9 +30,8 @@ class _EtzEmployeeHomePageState extends ConsumerState<EtzEmployeeHomePage> {
                   decoration: const BoxDecoration(
                     borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(10),
-                        bottomRight: Radius.circular(10)
-                        ),
-                    color: Color(0xFF2384C5),
+                        bottomRight: Radius.circular(10)),
+                    color: Color(0xFF015289),
                   ),
                   child: Padding(
                     padding:
@@ -76,8 +75,6 @@ class _EtzEmployeeHomePageState extends ConsumerState<EtzEmployeeHomePage> {
                   ),
                 ),
               ),
-
-              // Scrollable Container
               Positioned(
                 top: 150,
                 left: 20,
@@ -99,6 +96,25 @@ class _EtzEmployeeHomePageState extends ConsumerState<EtzEmployeeHomePage> {
                   ),
                 ),
               ),
+              /*
+              Positioned(
+                   top: 700,
+                left: 20,
+                right: 20,
+                  bottom:0,
+                child: Center(
+                  child: Padding(
+                              padding: const EdgeInsets.only(left: 10),
+                              child: Image.asset(
+                                'images/ng-etranz-logo.webp',
+                                width: 100,
+                                height: 100,
+                                fit: BoxFit.contain,
+                              ),
+                            ),
+                ),
+              )
+              */
             ],
           ),
         );
@@ -109,34 +125,51 @@ class _EtzEmployeeHomePageState extends ConsumerState<EtzEmployeeHomePage> {
   Widget _buildPortraitLayout() {
     return Column(
       children: [
-        // First row: 2 buttons
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            EtzElevatedButton(mainText: 'Reporting to work', onPressed: () {}),
-            EtzElevatedButton(mainText: 'End Of Day', onPressed: () {}),
+            EtzElevatedButton(
+              mainText: 'Reporting to work',
+              onPressed: () {},
+              buttonIcon: Image.asset(
+                'images/report-to-work.png',
+              ),
+            ),
+            EtzElevatedButton(
+              mainText: 'End Of Day',
+              onPressed: () {},
+              buttonIcon: Image.asset('images/end-of-day.png'),
+            )
           ],
         ),
         const SizedBox(height: 10),
-        // Second row: 2 buttons
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            EtzElevatedButton(mainText: 'Office Break', onPressed: () {}),
-            EtzElevatedButton(mainText: 'Return from break', onPressed: () {}),
+            EtzElevatedButton(
+              mainText: 'Office Break',
+              onPressed: () {},
+              buttonIcon: Image.asset('images/office-break.png'),
+            ),
+            EtzElevatedButton(
+                mainText: 'Return from break',
+                onPressed: () {},
+                buttonIcon: Image.asset('images/return-from-break.png')),
           ],
         ),
         const SizedBox(height: 10),
-        // Third row: 2 buttons
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            EtzElevatedButton(mainText: 'Night Shift', onPressed: () {}),
+            EtzElevatedButton(
+              mainText: 'Night Shift',
+              onPressed: () {},
+              buttonIcon: Image.asset('images/night.png'),
+            ),
             EtzElevatedButton(mainText: 'Off-duty Return', onPressed: () {}),
           ],
         ),
         const SizedBox(height: 10),
-        // Last row: 1 button
         Center(
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
@@ -159,7 +192,7 @@ class _EtzEmployeeHomePageState extends ConsumerState<EtzEmployeeHomePage> {
                     color: Color(0xFF2384C5),
                   ),
                   SizedBox(height: 10.0),
-                  Text("Night"),
+                  Text("Out of Office Duty"),
                 ],
               ),
             ),
@@ -172,27 +205,43 @@ class _EtzEmployeeHomePageState extends ConsumerState<EtzEmployeeHomePage> {
   Widget _buildLandscapeLayout() {
     return Column(
       children: [
-        // First row: 3 buttons
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            EtzElevatedButton(mainText: 'Reporting to work', onPressed: () {}),
-            EtzElevatedButton(mainText: 'End Of Day', onPressed: () {}),
-            EtzElevatedButton(mainText: 'Night Shift', onPressed: () {}),
+            EtzElevatedButton(
+              mainText: 'Reporting to work',
+              onPressed: () {},
+              buttonIcon: Image.asset('images/report-to-work.png'),
+            ),
+            EtzElevatedButton(
+              mainText: 'End Of Day',
+              onPressed: () {},
+              buttonIcon: Image.asset('images/end-of-day.png'),
+            ),
+            EtzElevatedButton(
+              mainText: 'Night Shift',
+              onPressed: () {},
+              buttonIcon: Image.asset('images/night.png'),
+            ),
           ],
         ),
         const SizedBox(height: 10),
-        // Second row: 3 buttons
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            EtzElevatedButton(mainText: 'Office Break', onPressed: () {}),
-            EtzElevatedButton(mainText: 'Return from break', onPressed: () {}),
+            EtzElevatedButton(
+              mainText: 'Office Break',
+              onPressed: () {},
+              buttonIcon: Image.asset('images/office-break.png'),
+            ),
+            EtzElevatedButton(
+                mainText: 'Return from break',
+                onPressed: () {},
+                buttonIcon: Image.asset('images/return-from-break.png')),
             EtzElevatedButton(mainText: 'Off-duty Return', onPressed: () {}),
           ],
         ),
         const SizedBox(height: 10),
-        // Last row: 1 button
         Center(
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
@@ -215,7 +264,7 @@ class _EtzEmployeeHomePageState extends ConsumerState<EtzEmployeeHomePage> {
                     color: Color(0xFF2384C5),
                   ),
                   SizedBox(height: 10.0),
-                  Text("Night"),
+                  Text("Out of Office Duty"),
                 ],
               ),
             ),
