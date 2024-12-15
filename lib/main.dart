@@ -1,3 +1,4 @@
+
 import 'package:attendance_app/new_feature/pages/login_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.system,
       //theme: ThemeData.dark(),
       debugShowCheckedModeBanner: false,
-      home: MyLogingPage(),
+      home: MyLoginPage(),
     );
   }
 }

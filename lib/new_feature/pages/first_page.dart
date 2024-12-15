@@ -19,29 +19,44 @@ class _EtzFirstPageState extends ConsumerState<EtzFirstPage> {
       backgroundColor: const Color(0xFFf1f3f8),
       appBar: AppBar(
         backgroundColor: blue,
-      ),
-      body: Center(
-          child: Row(
+        actions: const [
 
-        children: [
-          EtzElevatedButton(mainText: 'Visitor', onPressed: () {
-              Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) {
-                        return const EtzVisitorHomePage();
-                      }),
-                    );
-          }),
-          EtzElevatedButton(mainText: 'Employee', onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) {
-                        return const EtzEmployeeHomePage();
-                      }),
-                    );
-           }),
         ],
-      )),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+        
+            Image.asset('images/Fingerprint.png'),
+           
+            Padding(
+              padding: const EdgeInsets.only(bottom: 0.0, top: 100),
+              child: Center(
+                  child: Row(
+              
+                children: [
+                  EtzElevatedButton(mainText: 'Visitor',    buttonIcon: Image.asset('images/visitor.png'),onPressed: () {
+                      Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) {
+                                return const EtzVisitorHomePage();
+                              }),
+                            );
+                  }),
+                  EtzElevatedButton(mainText: 'Employee',   buttonIcon: Image.asset('images/employee.png'), onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) {
+                                return const EtzEmployeeHomePage();
+                              }),
+                            );
+                   }),
+                ],
+              )),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

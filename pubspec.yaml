@@ -45,6 +45,8 @@ dependencies:
   firebase_core: ^3.6.0
   flutter_riverpod: ^2.6.1
   google_fonts: ^6.2.1
+  dio: ^5.7.0
+  http: ^1.2.2
   
 
 dev_dependencies:
@@ -79,6 +81,11 @@ flutter:
      - images/office-break.png
      - images/out-of-office-duty.png
      - images/return-from-break.png
+     - images/employee.png
+     - images/visitor.png
+     - images/off-duty-return.png
+     - images/report-work.png
+     - images/Fingerprint.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

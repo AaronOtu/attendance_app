@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-ElevatedButton etzSubmitButton(String text, void Function() submit) {
+ElevatedButton etzSubmitButton(
+  String text, void Function() submit) {
   return ElevatedButton(
     style: ElevatedButton.styleFrom(
       fixedSize: const Size(400, 50),

@@ -1,6 +1,7 @@
 import 'package:attendance_app/new_feature/widgets/etzbutton.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class EtzEmployeeHomePage extends ConsumerStatefulWidget {
   const EtzEmployeeHomePage({super.key});
@@ -132,7 +133,7 @@ class _EtzEmployeeHomePageState extends ConsumerState<EtzEmployeeHomePage> {
               mainText: 'Reporting to work',
               onPressed: () {},
               buttonIcon: Image.asset(
-                'images/report-to-work.png',
+                'images/report-work.png',
               ),
             ),
             EtzElevatedButton(
@@ -166,12 +167,12 @@ class _EtzEmployeeHomePageState extends ConsumerState<EtzEmployeeHomePage> {
               onPressed: () {},
               buttonIcon: Image.asset('images/night.png'),
             ),
-            EtzElevatedButton(mainText: 'Off-duty Return', onPressed: () {}),
+            EtzElevatedButton(mainText: 'Off-duty Return', buttonIcon: Image.asset('images/off-duty-return.png'), onPressed: () {}),
           ],
         ),
         const SizedBox(height: 10),
         Center(
-          child: ElevatedButton(
+          child:  ElevatedButton(
             style: ElevatedButton.styleFrom(
               fixedSize: const Size(150, 100),
               backgroundColor: const Color(0xFFF9F9F9),
@@ -182,17 +183,42 @@ class _EtzEmployeeHomePageState extends ConsumerState<EtzEmployeeHomePage> {
               ),
             ),
             onPressed: () {},
-            child: const Center(
+            child: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Icon(
-                    Icons.check_circle_rounded,
-                    color: Color(0xFF2384C5),
+                  FittedBox(
+                    child: SizedBox(
+                      width: 60,
+                      height:60 ,
+                      child: Center(child: ClipRRect(
+                        borderRadius: BorderRadius.circular(8),
+                        child: Image.asset('images/out-of-office-duty.png'),
+                      ),),
+                    ),
                   ),
-                  SizedBox(height: 10.0),
-                  Text("Out of Office Duty"),
+                  // const Icon(
+                  //   Icons.check_circle_rounded,
+                  //   color: Color(0xFF2384C5),
+                  // ),
+                  const SizedBox(height: 10.0),
+                      FittedBox(
+                  child: Text(
+                    "Out of Office Duty",
+                    style: GoogleFonts.outfit(
+                      textStyle: const TextStyle(
+                        fontSize: 12,
+                           // Standard font size
+                        color: Colors.black87,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    overflow: TextOverflow.ellipsis,
+                    softWrap: true,
+                    maxLines: 1,
+                  ),
+                ),
                 ],
               ),
             ),
@@ -211,7 +237,7 @@ class _EtzEmployeeHomePageState extends ConsumerState<EtzEmployeeHomePage> {
             EtzElevatedButton(
               mainText: 'Reporting to work',
               onPressed: () {},
-              buttonIcon: Image.asset('images/report-to-work.png'),
+              buttonIcon: Image.asset('images/report-work.png'),
             ),
             EtzElevatedButton(
               mainText: 'End Of Day',
@@ -238,14 +264,14 @@ class _EtzEmployeeHomePageState extends ConsumerState<EtzEmployeeHomePage> {
                 mainText: 'Return from break',
                 onPressed: () {},
                 buttonIcon: Image.asset('images/return-from-break.png')),
-            EtzElevatedButton(mainText: 'Off-duty Return', onPressed: () {}),
+            EtzElevatedButton(mainText: 'Off-duty Return', buttonIcon: Image.asset('images/off-duty-return.png'), onPressed: () {}),
           ],
         ),
         const SizedBox(height: 10),
         Center(
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
-              fixedSize: const Size(150, 100),
+              fixedSize: const Size(240, 105),
               backgroundColor: const Color(0xFFF9F9F9),
               foregroundColor: const Color(0xFF475467),
               elevation: 10,
@@ -254,17 +280,42 @@ class _EtzEmployeeHomePageState extends ConsumerState<EtzEmployeeHomePage> {
               ),
             ),
             onPressed: () {},
-            child: const Center(
+            child: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Icon(
-                    Icons.check_circle_rounded,
-                    color: Color(0xFF2384C5),
+                  FittedBox(
+                    child: SizedBox(
+                      width: 60,
+                      height:60 ,
+                      child: Center(child: ClipRRect(
+                        borderRadius: BorderRadius.circular(8),
+                        child: Image.asset('images/out-of-office-duty.png'),
+                      ),),
+                    ),
                   ),
-                  SizedBox(height: 10.0),
-                  Text("Out of Office Duty"),
+                  // const Icon(
+                  //   Icons.check_circle_rounded,
+                  //   color: Color(0xFF2384C5),
+                  // ),
+                  const SizedBox(height: 10.0),
+                      FittedBox(
+                  child: Text(
+                    "Out of Office Duty",
+                    style: GoogleFonts.outfit(
+                      textStyle: const TextStyle(
+                        fontSize: 12,
+                           // Standard font size
+                        color: Colors.black87,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    overflow: TextOverflow.ellipsis,
+                    softWrap: true,
+                    maxLines: 1,
+                  ),
+                ),
                 ],
               ),
             ),
