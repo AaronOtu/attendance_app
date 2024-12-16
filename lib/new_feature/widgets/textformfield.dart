@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 TextFormField etzTextField(
   String text,
@@ -13,7 +14,7 @@ TextFormField etzTextField(
     enableSuggestions: !isPasswordType,
     autocorrect: !isPasswordType,
     validator: validator,
-    style: TextStyle(color: Colors.black.withOpacity(0.9)),
+    style: GoogleFonts.outfit(textStyle:TextStyle(color: Colors.black.withOpacity(0.9))),
     decoration: InputDecoration(
       prefixIcon: Icon(
         icon,

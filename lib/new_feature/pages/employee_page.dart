@@ -1,3 +1,4 @@
+import 'package:attendance_app/new_feature/pages/scanner_page.dart';
 import 'package:attendance_app/new_feature/widgets/etzbutton.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -131,14 +132,26 @@ class _EtzEmployeeHomePageState extends ConsumerState<EtzEmployeeHomePage> {
           children: [
             EtzElevatedButton(
               mainText: 'Reporting to work',
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const QRScannerPage()),
+                );
+              },
               buttonIcon: Image.asset(
                 'images/report-work.png',
               ),
             ),
             EtzElevatedButton(
               mainText: 'End Of Day',
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const QRScannerPage()),
+                );
+              },
               buttonIcon: Image.asset('images/end-of-day.png'),
             )
           ],
@@ -149,12 +162,24 @@ class _EtzEmployeeHomePageState extends ConsumerState<EtzEmployeeHomePage> {
           children: [
             EtzElevatedButton(
               mainText: 'Office Break',
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const QRScannerPage()),
+                );
+              },
               buttonIcon: Image.asset('images/office-break.png'),
             ),
             EtzElevatedButton(
                 mainText: 'Return from break',
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const QRScannerPage()),
+                  );
+                },
                 buttonIcon: Image.asset('images/return-from-break.png')),
           ],
         ),
@@ -164,15 +189,30 @@ class _EtzEmployeeHomePageState extends ConsumerState<EtzEmployeeHomePage> {
           children: [
             EtzElevatedButton(
               mainText: 'Night Shift',
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const QRScannerPage()),
+                );
+              },
               buttonIcon: Image.asset('images/night.png'),
             ),
-            EtzElevatedButton(mainText: 'Off-duty Return', buttonIcon: Image.asset('images/off-duty-return.png'), onPressed: () {}),
+            EtzElevatedButton(
+                mainText: 'Off-duty Return',
+                buttonIcon: Image.asset('images/off-duty-return.png'),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const QRScannerPage()),
+                  );
+                }),
           ],
         ),
         const SizedBox(height: 10),
         Center(
-          child:  ElevatedButton(
+          child: ElevatedButton(
             style: ElevatedButton.styleFrom(
               fixedSize: const Size(150, 100),
               backgroundColor: const Color(0xFFF9F9F9),
@@ -182,7 +222,12 @@ class _EtzEmployeeHomePageState extends ConsumerState<EtzEmployeeHomePage> {
                 borderRadius: BorderRadius.circular(10),
               ),
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const QRScannerPage()),
+              );
+            },
             child: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -191,11 +236,13 @@ class _EtzEmployeeHomePageState extends ConsumerState<EtzEmployeeHomePage> {
                   FittedBox(
                     child: SizedBox(
                       width: 60,
-                      height:60 ,
-                      child: Center(child: ClipRRect(
-                        borderRadius: BorderRadius.circular(8),
-                        child: Image.asset('images/out-of-office-duty.png'),
-                      ),),
+                      height: 60,
+                      child: Center(
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(8),
+                          child: Image.asset('images/out-of-office-duty.png'),
+                        ),
+                      ),
                     ),
                   ),
                   // const Icon(
@@ -203,22 +250,22 @@ class _EtzEmployeeHomePageState extends ConsumerState<EtzEmployeeHomePage> {
                   //   color: Color(0xFF2384C5),
                   // ),
                   const SizedBox(height: 10.0),
-                      FittedBox(
-                  child: Text(
-                    "Out of Office Duty",
-                    style: GoogleFonts.outfit(
-                      textStyle: const TextStyle(
-                        fontSize: 12,
-                           // Standard font size
-                        color: Colors.black87,
-                        fontWeight: FontWeight.w500,
+                  FittedBox(
+                    child: Text(
+                      "Out of Office Duty",
+                      style: GoogleFonts.outfit(
+                        textStyle: const TextStyle(
+                          fontSize: 12,
+                          // Standard font size
+                          color: Colors.black87,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
+                      overflow: TextOverflow.ellipsis,
+                      softWrap: true,
+                      maxLines: 1,
                     ),
-                    overflow: TextOverflow.ellipsis,
-                    softWrap: true,
-                    maxLines: 1,
                   ),
-                ),
                 ],
               ),
             ),
@@ -236,17 +283,35 @@ class _EtzEmployeeHomePageState extends ConsumerState<EtzEmployeeHomePage> {
           children: [
             EtzElevatedButton(
               mainText: 'Reporting to work',
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const QRScannerPage()),
+                );
+              },
               buttonIcon: Image.asset('images/report-work.png'),
             ),
             EtzElevatedButton(
               mainText: 'End Of Day',
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const QRScannerPage()),
+                );
+              },
               buttonIcon: Image.asset('images/end-of-day.png'),
             ),
             EtzElevatedButton(
               mainText: 'Night Shift',
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const QRScannerPage()),
+                );
+              },
               buttonIcon: Image.asset('images/night.png'),
             ),
           ],
@@ -257,14 +322,32 @@ class _EtzEmployeeHomePageState extends ConsumerState<EtzEmployeeHomePage> {
           children: [
             EtzElevatedButton(
               mainText: 'Office Break',
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const QRScannerPage()),
+                );
+              },
               buttonIcon: Image.asset('images/office-break.png'),
             ),
             EtzElevatedButton(
                 mainText: 'Return from break',
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const QRScannerPage()),
+                  );
+                },
                 buttonIcon: Image.asset('images/return-from-break.png')),
-            EtzElevatedButton(mainText: 'Off-duty Return', buttonIcon: Image.asset('images/off-duty-return.png'), onPressed: () {}),
+            EtzElevatedButton(
+                mainText: 'Off-duty Return',
+                buttonIcon: Image.asset('images/off-duty-return.png'),
+                onPressed: () {   Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const QRScannerPage()),
+        );}),
           ],
         ),
         const SizedBox(height: 10),
@@ -279,7 +362,12 @@ class _EtzEmployeeHomePageState extends ConsumerState<EtzEmployeeHomePage> {
                 borderRadius: BorderRadius.circular(10),
               ),
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const QRScannerPage()),
+              );
+            },
             child: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -288,11 +376,13 @@ class _EtzEmployeeHomePageState extends ConsumerState<EtzEmployeeHomePage> {
                   FittedBox(
                     child: SizedBox(
                       width: 60,
-                      height:60 ,
-                      child: Center(child: ClipRRect(
-                        borderRadius: BorderRadius.circular(8),
-                        child: Image.asset('images/out-of-office-duty.png'),
-                      ),),
+                      height: 60,
+                      child: Center(
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(8),
+                          child: Image.asset('images/out-of-office-duty.png'),
+                        ),
+                      ),
                     ),
                   ),
                   // const Icon(
@@ -300,22 +390,22 @@ class _EtzEmployeeHomePageState extends ConsumerState<EtzEmployeeHomePage> {
                   //   color: Color(0xFF2384C5),
                   // ),
                   const SizedBox(height: 10.0),
-                      FittedBox(
-                  child: Text(
-                    "Out of Office Duty",
-                    style: GoogleFonts.outfit(
-                      textStyle: const TextStyle(
-                        fontSize: 12,
-                           // Standard font size
-                        color: Colors.black87,
-                        fontWeight: FontWeight.w500,
+                  FittedBox(
+                    child: Text(
+                      "Out of Office Duty",
+                      style: GoogleFonts.outfit(
+                        textStyle: const TextStyle(
+                          fontSize: 12,
+                          // Standard font size
+                          color: Colors.black87,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
+                      overflow: TextOverflow.ellipsis,
+                      softWrap: true,
+                      maxLines: 1,
                     ),
-                    overflow: TextOverflow.ellipsis,
-                    softWrap: true,
-                    maxLines: 1,
                   ),
-                ),
                 ],
               ),
             ),

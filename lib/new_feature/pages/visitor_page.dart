@@ -1,6 +1,9 @@
+import 'package:attendance_app/new_feature/constants/colors.dart';
 import 'package:attendance_app/new_feature/widgets/textformfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class EtzVisitorHomePage extends ConsumerStatefulWidget {
   const EtzVisitorHomePage({super.key});
@@ -21,10 +24,10 @@ class _EtzVisitorHomePageState extends ConsumerState<EtzVisitorHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: const Color(0xFFf1f3f8),
+        backgroundColor: white,
         appBar: AppBar(
-          backgroundColor: const Color(0xFF2384C5),
-          title: const Text("Visitor Sections"),
+          backgroundColor: blue,
+          title: Text("Visitor Sections", style: GoogleFonts.outfit()),
           centerTitle: true,
         ),
         body: Padding(
@@ -34,28 +37,28 @@ class _EtzVisitorHomePageState extends ConsumerState<EtzVisitorHomePage> {
               children: [
                 const SizedBox(height: 20),
                 etzTextField(
-                    'Fullname', Icons.person, false, fullnameTextController),
+                    'Fullname', FontAwesomeIcons.user, false, fullnameTextController),
                 const SizedBox(height: 20),
-                etzTextField('Organisation', Icons.business, false,
+                etzTextField('Organisation', FontAwesomeIcons.building, false,
                     organisationController),
                 const SizedBox(height: 20),
                 etzTextField(
-                    'Phone number', Icons.phone, false, phoneNumberController),
+                    'Phone number', FontAwesomeIcons.phone, false, phoneNumberController),
                 const SizedBox(height: 20),
-                etzTextField('Host', Icons.person, false, hostController),
+                etzTextField('Host', FontAwesomeIcons.user, false, hostController),
                 const SizedBox(height: 20),
-                etzTextField('Car number', Icons.directions_car, false,
+                etzTextField('Car number', FontAwesomeIcons.car, false,
                     carNumberController),
                 const SizedBox(height: 20),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16.0),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
                   child: Text(
                     'Purpose of Visit',
-                    style: TextStyle(
+                    style: GoogleFonts.outfit(textStyle:const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                       color: Colors.black87,
-                    ),
+                    )),
                   ),
                 ),
                 Row(
@@ -63,7 +66,7 @@ class _EtzVisitorHomePageState extends ConsumerState<EtzVisitorHomePage> {
                   children: [
                     Expanded(
                       child: RadioListTile<String>(
-                        title: const Text('Official'),
+                        title:  Text('Official',style:GoogleFonts.outfit()),
                         value: 'Official',
                         groupValue: _visitType,
                         onChanged: (String? value) {
@@ -78,7 +81,7 @@ class _EtzVisitorHomePageState extends ConsumerState<EtzVisitorHomePage> {
                     ),
                     Expanded(
                       child: RadioListTile<String>(
-                        title: const Text('Personal'),
+                        title: Text('Personal',style:GoogleFonts.outfit()),
                         value: 'Personal',
                         groupValue: _visitType,
                         onChanged: (String? value) {

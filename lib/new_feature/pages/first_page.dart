@@ -27,7 +27,7 @@ class _EtzFirstPageState extends ConsumerState<EtzFirstPage> {
         child: Column(
           children: [
         
-            Image.asset('images/Fingerprint.png'),
+            Image.asset('images/firstpage.png'),
            
             Padding(
               padding: const EdgeInsets.only(bottom: 0.0, top: 100),
