@@ -10,15 +10,16 @@ void main() async {
   runApp(const ProviderScope(child: MyApp()));
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends ConsumerWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context,WidgetRef ref) {
+   
     return const MaterialApp(
       title: 'My Flutter App',
-      themeMode: ThemeMode.system,
-      //theme: ThemeData.dark(),
+       themeMode: ThemeMode.system,
+      //theme:ThemeData.dark(),
       debugShowCheckedModeBanner: false,
       home: MyLoginPage(),
     );

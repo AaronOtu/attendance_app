@@ -66,7 +66,11 @@ class _EtzVisitorHomePageState extends ConsumerState<EtzVisitorHomePage> {
                   children: [
                     Expanded(
                       child: RadioListTile<String>(
-                        title:  Text('Official',style:GoogleFonts.outfit()),
+                        title:  Text('Official',style:GoogleFonts.outfit(textStyle:const TextStyle(
+                      // fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black87,
+                    ))),
                         value: 'Official',
                         groupValue: _visitType,
                         onChanged: (String? value) {
@@ -81,7 +85,11 @@ class _EtzVisitorHomePageState extends ConsumerState<EtzVisitorHomePage> {
                     ),
                     Expanded(
                       child: RadioListTile<String>(
-                        title: Text('Personal',style:GoogleFonts.outfit()),
+                        title: Text('Personal',style:GoogleFonts.outfit(textStyle:const TextStyle(
+                      //fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black87,
+                    ))),
                         value: 'Personal',
                         groupValue: _visitType,
                         onChanged: (String? value) {

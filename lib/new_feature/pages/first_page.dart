@@ -19,38 +19,44 @@ class _EtzFirstPageState extends ConsumerState<EtzFirstPage> {
       backgroundColor: const Color(0xFFf1f3f8),
       appBar: AppBar(
         backgroundColor: blue,
-        actions: const [
-
-        ],
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-        
             Image.asset('images/firstpage.png'),
-           
             Padding(
               padding: const EdgeInsets.only(bottom: 0.0, top: 100),
               child: Center(
                   child: Row(
-              
                 children: [
-                  EtzElevatedButton(mainText: 'Visitor',    buttonIcon: Image.asset('images/visitor.png'),onPressed: () {
-                      Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) {
-                                return const EtzVisitorHomePage();
-                              }),
-                            );
-                  }),
-                  EtzElevatedButton(mainText: 'Employee',   buttonIcon: Image.asset('images/employee.png'), onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) {
-                                return const EtzEmployeeHomePage();
-                              }),
-                            );
-                   }),
+                  EtzElevatedButton(
+                      mainText: 'Visitor',
+                      buttonIcon: Image.asset('images/visitor.png'),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) {
+                            return const EtzVisitorHomePage();
+                          }),
+                        );
+                      }),
+                  EtzElevatedButton(
+                      mainText: 'Employee',
+                      buttonIcon: Image.asset('images/employee.png'),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) {
+                            return const EtzEmployeeHomePage();
+                          }),
+                        );
+                      }),
                 ],
               )),
             ),

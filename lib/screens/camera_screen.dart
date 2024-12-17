@@ -1,7 +1,7 @@
 import 'package:attendance_app/screens/firstpage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-//import 'package:path_provider/path_provider.dart';
+
 import 'dart:io';
 
 class CameraPage extends StatefulWidget {
@@ -21,7 +21,6 @@ class _CameraPageState extends State<CameraPage> {
     _openCamera();
   }
 
-  // Method to open the camera
   Future<void> _openCamera() async {
     final pickedFile = await _picker.pickImage(source: ImageSource.camera,preferredCameraDevice: CameraDevice.front);
     

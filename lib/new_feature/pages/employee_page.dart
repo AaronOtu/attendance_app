@@ -1,4 +1,4 @@
-import 'package:attendance_app/new_feature/pages/scanner_page.dart';
+import 'package:attendance_app/new_feature/pages/camera_screen.dart';
 import 'package:attendance_app/new_feature/widgets/etzbutton.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -136,7 +136,7 @@ class _EtzEmployeeHomePageState extends ConsumerState<EtzEmployeeHomePage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const QRScannerPage()),
+                      builder: (context) => const CameraPage()),
                 );
               },
               buttonIcon: Image.asset(
@@ -149,7 +149,7 @@ class _EtzEmployeeHomePageState extends ConsumerState<EtzEmployeeHomePage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const QRScannerPage()),
+                      builder: (context) => const CameraPage()),
                 );
               },
               buttonIcon: Image.asset('images/end-of-day.png'),
@@ -166,7 +166,7 @@ class _EtzEmployeeHomePageState extends ConsumerState<EtzEmployeeHomePage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const QRScannerPage()),
+                      builder: (context) => const CameraPage()),
                 );
               },
               buttonIcon: Image.asset('images/office-break.png'),
@@ -177,7 +177,7 @@ class _EtzEmployeeHomePageState extends ConsumerState<EtzEmployeeHomePage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const QRScannerPage()),
+                        builder: (context) => const CameraPage()),
                   );
                 },
                 buttonIcon: Image.asset('images/return-from-break.png')),
@@ -193,7 +193,7 @@ class _EtzEmployeeHomePageState extends ConsumerState<EtzEmployeeHomePage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const QRScannerPage()),
+                      builder: (context) => const CameraPage()),
                 );
               },
               buttonIcon: Image.asset('images/night.png'),
@@ -205,7 +205,7 @@ class _EtzEmployeeHomePageState extends ConsumerState<EtzEmployeeHomePage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const QRScannerPage()),
+                        builder: (context) => const CameraPage()),
                   );
                 }),
           ],
@@ -225,7 +225,7 @@ class _EtzEmployeeHomePageState extends ConsumerState<EtzEmployeeHomePage> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const QRScannerPage()),
+                MaterialPageRoute(builder: (context) => const CameraPage()),
               );
             },
             child: Center(
@@ -287,7 +287,7 @@ class _EtzEmployeeHomePageState extends ConsumerState<EtzEmployeeHomePage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const QRScannerPage()),
+                      builder: (context) => const CameraPage()),
                 );
               },
               buttonIcon: Image.asset('images/report-work.png'),
@@ -298,7 +298,7 @@ class _EtzEmployeeHomePageState extends ConsumerState<EtzEmployeeHomePage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const QRScannerPage()),
+                      builder: (context) => const CameraPage()),
                 );
               },
               buttonIcon: Image.asset('images/end-of-day.png'),
@@ -309,7 +309,7 @@ class _EtzEmployeeHomePageState extends ConsumerState<EtzEmployeeHomePage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const QRScannerPage()),
+                      builder: (context) => const CameraPage()),
                 );
               },
               buttonIcon: Image.asset('images/night.png'),
@@ -326,7 +326,7 @@ class _EtzEmployeeHomePageState extends ConsumerState<EtzEmployeeHomePage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const QRScannerPage()),
+                      builder: (context) => const CameraPage()),
                 );
               },
               buttonIcon: Image.asset('images/office-break.png'),
@@ -337,7 +337,7 @@ class _EtzEmployeeHomePageState extends ConsumerState<EtzEmployeeHomePage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const QRScannerPage()),
+                        builder: (context) => const CameraPage()),
                   );
                 },
                 buttonIcon: Image.asset('images/return-from-break.png')),
@@ -346,7 +346,7 @@ class _EtzEmployeeHomePageState extends ConsumerState<EtzEmployeeHomePage> {
                 buttonIcon: Image.asset('images/off-duty-return.png'),
                 onPressed: () {   Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const QRScannerPage()),
+          MaterialPageRoute(builder: (context) => const CameraPage()),
         );}),
           ],
         ),
@@ -365,7 +365,7 @@ class _EtzEmployeeHomePageState extends ConsumerState<EtzEmployeeHomePage> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const QRScannerPage()),
+                MaterialPageRoute(builder: (context) => const CameraPage()),
               );
             },
             child: Center(

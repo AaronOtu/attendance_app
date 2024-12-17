@@ -1,5 +1,5 @@
 import 'dart:io' show Platform;
-import 'package:attendance_app/new_feature/pages/first_page.dart';
+import 'package:attendance_app/new_feature/pages/employee_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:qr_code_scanner_plus/qr_code_scanner_plus.dart';
@@ -88,7 +88,7 @@ class _QRScannerPageState extends State<QRScannerPage> {
       if (mounted) {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const EtzFirstPage()),
+          MaterialPageRoute(builder: (context) => const EtzEmployeeHomePage()),
         );
       }
     });

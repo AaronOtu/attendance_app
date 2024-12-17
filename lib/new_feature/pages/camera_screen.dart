@@ -21,7 +21,6 @@ class _CameraPageState extends State<CameraPage> {
     _openCamera();
   }
 
-  // Method to open the camera
   Future<void> _openCamera() async {
     final pickedFile = await _picker.pickImage(source: ImageSource.camera,preferredCameraDevice: CameraDevice.front);
     
