@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
+//This a test file for designing a UI
 class TestPage extends ConsumerStatefulWidget {
   const TestPage({super.key});
 
@@ -169,7 +169,6 @@ class _TestPageState extends ConsumerState<TestPage> {
     );
   }
 }
-
 
 
 
